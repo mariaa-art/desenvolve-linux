@@ -1,0 +1,68 @@
+
+SCRIPT 1 - LOOP DE NÚMEROS: 
+
+#!/bin/bash
+while true; do
+    echo "Digite um número (ou 0 para sair):"
+    read numero
+    if ! [[ "$numero" =~ ^[0-9]+$ ]]; then
+        echo "Entrada inválida. Digite apenas um número."
+        continue
+    fi
+    if [ "$numero" -eq 0 ]; then
+        echo "Você digitou zero. Saindo..."
+        break
+    fi
+    echo "Você digitou: $numero"
+    sleep 5
+done
+
+TERMINAL:
+PDITA630@PDITA630l:~$ nano solicitar_numero.sh
+PDITA630@PDITA630l:~$ chmod +x solicitar_numero.sh
+PDITA630@PDITA630l:~$ ./solicitar_numero.sh
+Digite um número (ou 0 para sair):
+1
+Você digitou: 1
+2
+Digite um número (ou 0 para sair):
+Você digitou: 2
+0
+Digite um número (ou 0 para sair):
+Você digitou zero. Saindo...
+
+
+
+SCRIPT 2 - ARQUIVOS: 
+
+#!/bin/bash
+echo "Quantos arquivos de log você deseja criar?"
+read quantidade
+
+if ! [[ "$quantidade" =~ ^[0-9]+$ ]]; then
+    echo "Por favor, digite um número válido."
+    exit 1
+fi
+
+for i in $(seq 1 "$quantidade"); do
+    touch "log$i.txt"
+    echo "Arquivo log$i.txt criado."
+done
+
+echo "Todos os $quantidade arquivos de log foram criados."
+
+TERMINAL:
+
+PDITA630@PDITA630l:~$ nano criar_logs.sh
+PDITA630@PDITA630l:~$ chmod +x criar_logs.sh
+PDITA630@PDITA630l:~$ ./criar_logs.sh
+Quantos arquivos de log você deseja criar?
+3
+Arquivo log1.txt criado.
+Arquivo log2.txt criado.
+Arquivo log3.txt criado.
+Todos os 3 arquivos de log foram criados.
+PDITA630@PDITA630l:~$ ./criar_logs.sh
+Quantos arquivos de log você deseja criar?
+t
+Por favor, digite um número válido.

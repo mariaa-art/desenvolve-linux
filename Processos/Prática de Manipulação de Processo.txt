@@ -1,0 +1,23 @@
+- Prática de Manipulação de Processo I
+PDITA630@PDITA630l:~$ gedit &
+[1] 21885
+PDITA630@PDITA630l:~$ Comando 'gedit' não encontrado, mas poder ser instalado com:
+sudo snap install gedit  # version 46.1, or
+sudo apt  install gedit  # version 44.2-1
+Veja 'snap info gedit' para versões adicionais.
+sudo snap install gedisudo snap install gedit  # version 46.1
+[sudo] senha para PDITA630: 
+gedit 46.1 from Canonical✓ installed
+[1]+  Fim da execução com status 127        gedit
+PDITA630@PDITA630l:~$ gedit &
+
+PDITA630@PDITA630l:~$ htop
+Comando 'htop' não encontrado, mas poder ser instalado com:
+sudo snap install htop  # version 3.3.0, or
+sudo apt  install htop  # version 3.2.2-2
+Veja 'snap info htop' para versões adicionais.
+PDITA630@PDITA630l:~$ sudo snap install htop  # version 3.3.0
+htop 3.3.0 from Maximiliano Bertacchini (maxiberta✪) installed
+PDITA630@PDITA630l:~$ htop
+
+

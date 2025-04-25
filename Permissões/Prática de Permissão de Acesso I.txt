@@ -1,0 +1,16 @@
+
+mkdir ~/Documentos/Scripts
+cd ~/Documentos/Scripts
+touch dono.txt grupo.txt outros.txt
+chmod u=rwx,g=,o= dono.txt
+chmod u=rwx,g=rwx,o= grupo.txt
+chmod u=rwx,g=rwx,o=rwx outros.txt
+chmod 700 dono.txt
+chmod 770 grupo.txt
+chmod 777 outros.txt
+
+Verificando as Permissões:
+ls -l
+-rwx------ 1 PDITA630 PDITA630 0 fev  1 18:18 dono.txt
+-rwxrwx--- 1 PDITA630 PDITA630 0 fev  1 18:18 grupo.txt
+-rwxrwxrwx 1 PDITA630 PDITA630 0 fev  1 18:18 outros.txt

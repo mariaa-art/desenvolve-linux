@@ -1,0 +1,35 @@
+
+SCRIPT:
+
+#!/bin/bash
+if [ "$EUID" -eq 0 ]; then
+    echo "Você está usando o usuário root."
+else
+    echo "Você não está usando o usuário root."
+fi
+if [ "$USER" = "root" ]; then
+    echo "Você está usando o usuário root."
+else
+    echo "Você não está usando o usuário root."
+fi
+
+PDITA630@PDITA630l:~$ nano verificar_root.sh
+PDITA630@PDITA630l:~$ chmod +x verificar_root.sh
+PDITA630@PDITA630l:~$ ./verificar_root.sh
+Você NÃO está usando o usuário root.
+Você NÃO está usando o usuário root.
+PDITA630@PDITA630l:~$ 
+
+CAFÉ:
+PDITA630@PDITA630l:~$ nano verificar_root.sh
+PDITA630@PDITA630l:~$ chmod +x verificar_root.sh
+PDITA630@PDITA630l:~$ ./verificar_root.sh
+Você NÃO está usando o usuário root.
+Você NÃO está usando o usuário root.
+PDITA630@PDITA630l:~$ nano avaliar_cafe.sh
+PDITA630@PDITA630l:~$ nano avaliar_cafe.sh
+PDITA630@PDITA630l:~$ chmod +x avaliar_cafe.sh
+PDITA630@PDITA630l:~$ ./avaliar_cafe.sh
+De 1 a 5, quanto você gosta de café?
+5
+Você AMA café!

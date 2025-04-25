@@ -1,0 +1,38 @@
+
+SCRIPT: 
+#!/bin/bash
+
+echo "Digite o nome do arquivo que deseja buscar:"
+read nome_arquivo
+
+if [ -z "$nome_arquivo" ]; then
+    echo "Nenhum nome de arquivo foi fornecido. Saindo..."
+    exit 1
+fi
+
+echo "Busca sem sudo:"
+find / -name "$nome_arquivo" 2>/dev/null
+
+echo "Busca com sudo:"
+sudo find / -name "$nome_arquivo" 2>/dev/null 
+
+
+TERMINAL:
+PDITA630@PDITA630l:~$ nano buscar_arquivo.sh
+PDITA630@PDITA630l:~$ chmod +x buscar_arquivo.sh
+PDITA630@PDITA630l:~$ ./buscar_arquivo.sh
+Digite o nome do arquivo que deseja buscar:
+arquivo.txt
+Busca sem sudo:
+/home/PDITA630/Documentos/exercicio/arquivo.txt
+Busca com sudo:
+[sudo] senha para PDITA630: 
+/home/PDITA630/Documentos/exercicio/arquivo.txt
+PDITA630@PDITA630l:~$ 
+
+Comando find:
+find / -name "arquivo.txt" deu Permissão negada. 
+Como:
+find: ‘/proc/30120/ns’: Permissão negada
+find: ‘/lost+found’: Permissão negada
+.....
